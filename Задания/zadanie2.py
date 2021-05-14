@@ -15,12 +15,13 @@ if __name__ == '__main__':
     b = a[A:B]
     b = len(b)
     print("Количество чисел в диапазоне от А до В = ", b)
-    for i in range(len(a)):
-        if m < a[i]:
-            m = a[i]
-            n = i
+    for i in enumerate(a, 0):
+        if m < i[1]:
+            m = i[1]
+            n = i[0]
     c = a[n:]
-    s = sum(c, -m)
+    g = a[n + 1:]
+    s = sum(g)
     j = tuple(sorted(c, key=lambda x: math.fabs(x), reverse=True))
     print("Сумма чисел после максимального элемента, введёного списка", s)
     print(j)
